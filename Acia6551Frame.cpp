@@ -34,6 +34,11 @@ Acia6551Frame::Acia6551Frame (const wxString& title, Acia6551 * acia)
   wxPanel * panel = new wxPanel(this);
 
   cmd = ctl = sta = txd = rxd = 0;
+  txdbs = txsbs = rxdbs = rxsbs = 0;
+  txs = rxs = txbps = rxbps = 0;
+  txpar = rxpar = PARITY_NONE;
+  txen = rxen = txirqen = rxirqen = DISABLED;
+  txirq = rxirq = false;
 
   cmdreg = new ByteRegister(&cmd);
   ctlreg = new ByteRegister(&ctl);
@@ -193,7 +198,7 @@ void Acia6551Frame::OnClose (wxCloseEvent& event)
 
 void Acia6551Frame::SetParams ()
 {
-  char txt[40];
+  char txt[256];
   char pchar[] = "NOEMS";
 
   if (txsbs & 1)
