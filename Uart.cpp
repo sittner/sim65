@@ -81,7 +81,7 @@ void Uart::UpdateAll ()
 
 unsigned char Uart::read_rx_data (unsigned short dummy)
 {
-  if (rx.bufidx == 0) return 0;
+  if (rx.buf == NULL || rx.bufidx == 0) return 0;
 
   rx.bufidx = rx.bufidx - 1;
 
