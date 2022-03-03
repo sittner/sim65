@@ -1,0 +1,2 @@
+- fix all 65c02 emulation errors
+- make clicking close buttons on extra frames just hide them, not kill them and wedge the app

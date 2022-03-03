@@ -1,0 +1,594 @@
+Acia6551.cpp:      nlistener->TellCmd(command);
+Acia6551.cpp:      nlistener->TellCtl(control);
+Acia6551.cpp:      nlistener->TellSta(status);
+Acia6551.cpp:      nlistener->TellTxd(txbuf);
+Acia6551.cpp:      nlistener->TellRxd(0);
+Acia6551.cpp:      listener[idx]->TellCmd(command);
+Acia6551.cpp:      listener[idx]->TellCtl(control);
+Acia6551.cpp:      listener[idx]->TellSta(status);
+Acia6551.cpp:      listener[idx]->TellTxd(txbuf);
+Acia6551.cpp:      listener[idx]->TellRxd(0);
+Acia6551.cpp:    listener[idx]->TellTxd(byte);
+Acia6551.cpp:    listener[idx]->TellSta(byte);
+Acia6551.cpp:    listener[idx]->TellCmd(byte);
+Acia6551.cpp:    listener[idx]->TellCtl(byte);
+Acia6551Frame.cpp:  : wxFrame((wxFrame *)NULL, -1, title, wxDefaultPosition, wxDefaultSize, NORESIZE_FRAME)
+Acia6551Frame.cpp:  wxFont font(prefs->WindowFontSize(), wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL);
+Acia6551Frame.cpp:  txenchk = new wxCheckBox(panel, -1, wxString::FromAscii("Tx Enabled"));
+Acia6551Frame.cpp:  rxenchk = new wxCheckBox(panel, -1, wxString::FromAscii("Rx Enabled"));
+Acia6551Frame.cpp:  txirqchk = new wxCheckBox(panel, -1, wxString::FromAscii("Tx Interrupt"));
+Acia6551Frame.cpp:  rxirqchk = new wxCheckBox(panel, -1, wxString::FromAscii("Rx Interrupt"));
+Acia6551Frame.cpp:  txirqenchk = new wxCheckBox(panel, -1, wxString::FromAscii("Tx Int. Enabled"));
+Acia6551Frame.cpp:  rxirqenchk = new wxCheckBox(panel, -1, wxString::FromAscii("Rx Int. Enabled"));
+Acia6551Frame.cpp:  wxStaticBox * txchk_box = new wxStaticBox(panel, -1, wxString::FromAscii("Tx Status"));
+Acia6551Frame.cpp:  txchk_sizer->Add(txenchk, 0, 0, 0);
+Acia6551Frame.cpp:  txchk_sizer->Add(txirqenchk, 0, 0, 0);
+Acia6551Frame.cpp:  txchk_sizer->Add(txirqchk, 0, 0, 0);
+Acia6551Frame.cpp:  wxStaticBox * rxchk_box = new wxStaticBox(panel, -1, wxString::FromAscii("Rx Status"));
+Acia6551Frame.cpp:  rxchk_sizer->Add(rxenchk, 0, 0, 0);
+Acia6551Frame.cpp:  rxchk_sizer->Add(rxirqenchk, 0, 0, 0);
+Acia6551Frame.cpp:  rxchk_sizer->Add(rxirqchk, 0, 0, 0);
+Acia6551Frame.cpp:  cksizer->Add(txchk_sizer, 0, wxBOTTOM, prefs->BorderWidth());
+Acia6551Frame.cpp:  cksizer->Add(rxchk_sizer, 0, 0, 0);
+Acia6551Frame.cpp:  wxStaticBox * reg_box = new wxStaticBox(panel, -1, wxString::FromAscii("ACIA Registers"));
+Acia6551Frame.cpp:  reg_sizer->Add(cmdwin, 0, wxALL | wxALIGN_RIGHT, prefs->BorderWidth());
+Acia6551Frame.cpp:  reg_sizer->Add(ctlwin, 0, wxLEFT | wxRIGHT | wxBOTTOM | wxALIGN_RIGHT, prefs->BorderWidth());
+Acia6551Frame.cpp:  reg_sizer->Add(stawin, 0, wxLEFT | wxRIGHT | wxBOTTOM | wxALIGN_RIGHT, prefs->BorderWidth());
+Acia6551Frame.cpp:  reg_sizer->Add(txdwin, 0, wxLEFT | wxRIGHT | wxBOTTOM | wxALIGN_RIGHT, prefs->BorderWidth());
+Acia6551Frame.cpp:  reg_sizer->Add(rxdwin, 0, wxLEFT | wxRIGHT | wxBOTTOM | wxALIGN_RIGHT, prefs->BorderWidth());
+Acia6551Frame.cpp:  term = new wxTextCtrl(panel, -1, wxString::FromAscii(""), wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE | wxTE_CHARWRAP | wxTE_READONLY);
+Acia6551Frame.cpp:  term->SetFont(font);
+Acia6551Frame.cpp:  term->SetDefaultStyle(attr);
+Acia6551Frame.cpp:  term->SetSize(40 * term->GetCharWidth(), 2 * term->GetCharHeight());
+Acia6551Frame.cpp:  wxStaticBox * term_box = new wxStaticBox(panel, -1, wxString::FromAscii("Output"));
+Acia6551Frame.cpp:  term_sizer->Add(term, 1, wxALL | wxEXPAND, prefs->BorderWidth());
+Acia6551Frame.cpp:  txpm = new wxTextCtrl(panel, -1, wxString::FromAscii(""), wxDefaultPosition, wxDefaultSize, wxTE_READONLY);
+Acia6551Frame.cpp:  txpm->SetFont(font);
+Acia6551Frame.cpp:  txpm->SetDefaultStyle(attr);
+Acia6551Frame.cpp:  txsz.Set(20 * txpm->GetCharWidth(), 3 * txpm->GetCharHeight() / 2);
+Acia6551Frame.cpp:  txpm->SetClientSize(txsz);
+Acia6551Frame.cpp:  txpm->SetMinClientSize(txsz);
+Acia6551Frame.cpp:  wxStaticBox * txpm_box = new wxStaticBox(panel, -1, wxString::FromAscii("Tx Params"));
+Acia6551Frame.cpp:  txpm_sizer->Add(txpm, 1, wxALL, prefs->BorderWidth());
+Acia6551Frame.cpp:  rxpm = new wxTextCtrl(panel, -1, wxString::FromAscii(""), wxDefaultPosition, wxDefaultSize, wxTE_READONLY);
+Acia6551Frame.cpp:  rxpm->SetFont(font);
+Acia6551Frame.cpp:  rxpm->SetDefaultStyle(attr);
+Acia6551Frame.cpp:  rxsz.Set(20 * rxpm->GetCharWidth(), 3 * rxpm->GetCharHeight() / 2);
+Acia6551Frame.cpp:  rxpm->SetClientSize(rxsz);
+Acia6551Frame.cpp:  rxpm->SetMinClientSize(rxsz);
+Acia6551Frame.cpp:  wxStaticBox * rxpm_box = new wxStaticBox(panel, -1, wxString::FromAscii("Rx Params"));
+Acia6551Frame.cpp:  rxpm_sizer->Add(rxpm, 1, wxALL, prefs->BorderWidth());
+Acia6551Frame.cpp:  pmsizer->Add(txpm_sizer, 0, wxBOTTOM, prefs->BorderWidth());
+Acia6551Frame.cpp:  pmsizer->Add(prefs->BorderWidth(), 0 ,0 ,0);
+Acia6551Frame.cpp:  pmsizer->Add(rxpm_sizer, 0, wxBOTTOM, prefs->BorderWidth());
+Acia6551Frame.cpp:  rsizer->Add(prefs->BorderWidth(), 0 ,0 ,0);
+Acia6551Frame.cpp:  rsizer->Add(pmsizer, 0, 0, 0);
+Acia6551Frame.cpp:  rsizer->Add(prefs->BorderWidth(), 0 ,0 ,0);
+Acia6551Frame.cpp:  rsizer->Add(term_sizer, 1, wxEXPAND, 0);
+Acia6551Frame.cpp:  rsizer->Add(prefs->BorderWidth(), 0 ,0 ,0);
+Acia6551Frame.cpp:  hsizer->Add(2*prefs->BorderWidth(), 0, 0, 0); // spacer
+Acia6551Frame.cpp:  hsizer->Add(reg_sizer, 0, wxEXPAND, 0);
+Acia6551Frame.cpp:  hsizer->Add(2*prefs->BorderWidth(), 0, 0, 0); // spacer
+Acia6551Frame.cpp:  hsizer->Add(rsizer, 0, wxEXPAND, 0);
+Acia6551Frame.cpp:  hsizer->Add(2*prefs->BorderWidth(), 0, 0, 0); // spacer
+Acia6551Frame.cpp:  hsizer->Add(cksizer, 0, wxEXPAND, 0);
+Acia6551Frame.cpp:  hsizer->Add(2*prefs->BorderWidth(), 0, 0, 0); // spacer
+Acia6551Frame.cpp:  vsizer->Add(0, prefs->BorderWidth(), 0, 0); // spacer
+Acia6551Frame.cpp:  vsizer->Add(hsizer, 0, 0, 0);
+Acia6551Frame.cpp:  vsizer->Add(0, prefs->BorderWidth(), 0, 0); // spacer
+Acia6551Frame.cpp:  panel->SetSizer(vsizer);
+Acia6551Frame.cpp:  vsizer->SetSizeHints(panel);
+Acia6551Frame.cpp:  panel_sizer->Add(panel, 0, 0, 0);
+Acia6551Frame.cpp:  this->SetSizer(panel_sizer);
+Acia6551Frame.cpp:  panel_sizer->SetSizeHints(this);
+Acia6551Frame.cpp:  acia->AddAcia6551Listener(this);
+Acia6551Frame.cpp:  acia->AddUartListener(this);
+Acia6551Frame.cpp:  txirqchk->SetValue(tx);
+Acia6551Frame.cpp:  rxirqchk->SetValue(rx);
+Acia6551Frame.cpp:  txenchk->SetValue(tx == ENABLED ? true : false);
+Acia6551Frame.cpp:  rxenchk->SetValue(rx == ENABLED ? true : false);
+Acia6551Frame.cpp:  txirqenchk->SetValue((irq && tx == ENABLED) ? true : false);
+Acia6551Frame.cpp:  rxirqenchk->SetValue((irq && rx == ENABLED) ? true : false);
+Acia6551Frame.cpp:  txpm->SetValue(wxString::FromAscii(txt));
+Acia6551Frame.cpp:  rxpm->SetValue(wxString::FromAscii(txt));
+AddressDialog.cpp:// RCS-ID:      $Id: textdlgg.cpp,v 1.20 2002/06/23 13:51:32 JS Exp $
+AddressDialog.cpp:  : wxDialog(parent, -1, wxString::FromAscii("Enter Load Address"), wxDefaultPosition,
+AddressDialog.cpp:  m_textctrl = new wxTextCtrl(this, -1, m_value, wxDefaultPosition, wxDefaultSize, 0);
+AddressDialog.cpp:  m_textctrl->SetMaxLength(4);
+AddressDialog.cpp:  wxFont wfont = m_textctrl->GetDefaultStyle().GetFont();
+AddressDialog.cpp:  m_textctrl->SetDefaultStyle(wxTextAttr(*wxBLACK, wxNullColour, mfont));
+AddressDialog.cpp:  topsizer->Add(CreateTextSizer(message), 0, wxALL, 10);
+AddressDialog.cpp:  topsizer->Add(m_textctrl, 1, wxLEFT | wxRIGHT | wxCENTRE, 15);
+AddressDialog.cpp:  topsizer->Add(new wxStaticLine(this, -1), 0, wxEXPAND | wxLEFT | wxRIGHT | wxTOP, 10);
+AddressDialog.cpp:  topsizer->Add(CreateButtonSizer(wxOK | wxCANCEL | wxCENTRE), 0, wxCENTRE | wxALL, 10);
+AddressDialog.cpp:  m_textctrl->SetValidator(validator);
+AddressDialog.cpp:  topsizer->SetSizeHints(this);
+AddressDialog.cpp:  topsizer->Fit(this);
+AddressDialog.cpp:  m_textctrl->SetFocus();
+AddressDialog.cpp:  m_value = m_textctrl->GetValue();
+AppleTextFrame.cpp:  : wxFrame((wxFrame *)NULL, -1, title, wxDefaultPosition, wxDefaultSize, NORESIZE_FRAME)
+AppleTextFrame.cpp:  wxFont font(prefs->WindowFontSize(), wxFONTFAMILY_TELETYPE, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL);
+AppleTextFrame.cpp:  this->SetFocus();
+AppleTextFrame.cpp:  addr -= 0x400;
+AppleTextFrame.cpp:  addr = addr - 0x400;
+AppleTextFrame.cpp:  return panel->keybit | panel->lastkey;
+AppleTextFrame.cpp:  panel->keybit = 0;
+AppleTextFrame.cpp:  return panel->keybit;
+AppleTextFrame.cpp:  panel->keybit = 0;
+Breakpoint.cpp:  this->wval = addr;
+Breakpoint.cpp:  this->flags = bp_PC | bp_equal;
+Breakpoint.cpp:  this->enabled = true;
+Breakpoint.cpp:  this->wval = addr;
+Breakpoint.cpp:  this->flags = bp_mem | bp_equal;
+Breakpoint.cpp:  this->enabled = true;
+Breakpoint.cpp:  this->bval = byte;
+Breakpoint.cpp:  this->flags = flags;
+Breakpoint.cpp:  this->enabled = true;
+Breakpoint.cpp:  this->wval = addr;
+Breakpoint.cpp:  this->flags = flags;
+Breakpoint.cpp:  this->enabled = true;
+Breakpoint.cpp:  if ((this->flags & bp_PC) && (flags & bp_PC))
+Breakpoint.cpp:    if (this->wval == addr)
+Breakpoint.cpp:  if ((this->flags & bp_mem) && (flags & bp_mem))
+Breakpoint.cpp:    if (this->wval == addr && this->bval == byte)
+Breakpoint.cpp:  if ((this->flags == flags) && this->bval == byte)
+BreakpointManager.cpp:    bp_listeners[idx]->TellDeletedBreakpoint(0);
+BreakpointManager.cpp:    bp_listeners[idx]->TellEnabledBreakpoint(0);
+BreakpointManager.cpp:    bp_listeners[idx]->TellDisabledBreakpoint(0);
+BreakpointManager.cpp:    bp_listeners[idx]->TellAddedBreakpoint(breakpoints + num_breakpoints);
+BreakpointManager.cpp:  --num_breakpoints;
+BreakpointManager.cpp:    bp_listeners[idx]->TellDeletedBreakpoint(bpp);
+BreakpointManager.cpp:  for (int idx = bpp - breakpoints; idx < num_breakpoints; ++idx)
+BreakpointManager.cpp:  bpp->Enable();
+BreakpointManager.cpp:    bp_listeners[idx]->TellEnabledBreakpoint(bpp);
+BreakpointManager.cpp:  bpp->Disable();
+BreakpointManager.cpp:    bp_listeners[idx]->TellDisabledBreakpoint(bpp);
+BreakpointManager.cpp:  --num_breakpoints;
+BreakpointManager.cpp:    bp_listeners[i]->TellDeletedBreakpoint(bpp);
+BreakpointWindow.cpp:  : wxScrolledWindow(parent, -1, wxDefaultPosition, wxDefaultSize, wxVSCROLL | wxSUNKEN_BORDER)
+BreakpointWindow.cpp:  selected = -1;
+BreakpointWindow.cpp:  // bpMenuDisable->Append(BP_Goto, "Go to");
+BreakpointWindow.cpp:  bpMenuDisable->Append(BP_Disable, wxString::FromAscii("Disable"));
+BreakpointWindow.cpp:  bpMenuDisable->Append(BP_Delete, wxString::FromAscii("Delete"));
+BreakpointWindow.cpp:  // bpMenuEnable->Append(BP_Goto, "Go to");
+BreakpointWindow.cpp:  bpMenuEnable->Append(BP_Enable, wxString::FromAscii("Enable"));
+BreakpointWindow.cpp:  bpMenuEnable->Append(BP_Delete, wxString::FromAscii("Delete"));
+BreakpointWindow.cpp:  SetFont(wxFont(prefs->WindowFontSize(), wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL));
+BreakpointWindow.cpp:      if (idx == bpm->NumBreakpoints())
+BreakpointWindow.cpp:      Breakpoint * bp = bpm->GetBreakpointAtIndex(idx);
+BreakpointWindow.cpp:	  if (bp->IsEnabled())
+BreakpointWindow.cpp:	  if (bp->IsEnabled())
+BreakpointWindow.cpp:      bpflags_t cond = bp->GetConditionFlags();
+BreakpointWindow.cpp:      bpflags_t op = bp->GetOperandFlags();
+BreakpointWindow.cpp:	sprintf(foo, "%2d) PC %s $%4.4x", idx+1, condstr, bp->GetAddress());
+BreakpointWindow.cpp:	sprintf(foo, "%2d) S %s $%2.2x", idx+1, condstr, bp->GetValue());
+BreakpointWindow.cpp:  if ((vy + cy) < bpm->NumBreakpoints())
+BreakpointWindow.cpp:	selected = -1;
+BreakpointWindow.cpp:  if ((vy + cy) < bpm->NumBreakpoints())
+BreakpointWindow.cpp:      if (bpm->GetBreakpointAtIndex(selected)->IsEnabled())
+BreakpointWindow.cpp:  bpm->EnableBreakpointAtIndex(selected);
+BreakpointWindow.cpp:  bpm->DisableBreakpointAtIndex(selected);
+BreakpointWindow.cpp:  bpm->DeleteBreakpointAtIndex(selected);
+BreakpointWindow.cpp:  SetScrollbars(cwidth, cheight, BPWIN_WIDTH, bpm->NumBreakpoints());
+Bug.cpp:  // Bptr--;  // makes it work
+ByteRegister.cpp:	listeners[idx]->TellNewValue(b);
+Core65c02.cpp:      --count;
+Core65c02.cpp:	    clockuser[idx]->TellTime(time);
+Core65c02.cpp:      int nbkpts = bpm->NumBreakpoints();
+Core65c02.cpp:	  while (nbkpts--)
+Core65c02.cpp:	      bp = bpm->GetBreakpointAtIndex(nbkpts);
+Core65c02.cpp:	      if (bp->IsEnabled() == false)
+Core65c02.cpp:	      if (bp->GetOperandFlags() == bp_PC)
+Core65c02.cpp:		  if (bp->GetConditionFlags() == bp_equal)
+Core65c02.cpp:		    if (bp->GetAddress() == emPC)
+Core65c02.cpp:			if (bp->IsAutomatic())
+Core65c02.cpp:			  bpm->DeleteBreakpoint(bp);
+Core65c02.cpp:	      else if (bp->GetOperandFlags() == bp_S)
+Core65c02.cpp:		  if (bp->GetConditionFlags() == bp_equal)
+Core65c02.cpp:		    if (bp->GetValue() == S)
+Core65c02.cpp:			if (bp->IsAutomatic())
+Core65c02.cpp:			  bpm->DeleteBreakpoint(bp);
+Binary file Core65c02.cpp matches
+DisasmWindow.cpp:  : wxScrolledWindow(parent, -1, wxDefaultPosition, wxDefaultSize, wxVSCROLL | wxSUNKEN_BORDER)
+DisasmWindow.cpp:  SetFont(wxFont(prefs->WindowFontSize(), wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL));
+DisasmWindow.cpp:  bkpt_bmp_width = bkpt_enabled->GetWidth();
+DisasmWindow.cpp:  bkpt_bmp_height = bkpt_enabled->GetHeight();
+DisasmWindow.cpp:  bkpt_bmp_xoffs = cwidth + (cwidth - bkpt_bmp_width) / 2;
+DisasmWindow.cpp:  bkpt_bmp_yoffs = (cheight - bkpt_bmp_height) / 2;
+DisasmWindow.cpp:      if (mem->IsReadable(addr))
+DisasmWindow.cpp:	  /* address is readable - see how big the instruction there is */
+DisasmWindow.cpp:	      if (mem->IsReadable(addr + idx) == 0)
+DisasmWindow.cpp:	  /* unreadable address - could be I/O, not implemented, etc. */
+DisasmWindow.cpp:	  if ((addr-idx) < 0)
+DisasmWindow.cpp:	  if (mem->IsReadable(addr-idx) == 0)
+DisasmWindow.cpp:	  /* address is readable - see how big the instruction there is */
+DisasmWindow.cpp:	  int numbytes = instruction_size[READ(addr-idx)];
+DisasmWindow.cpp:	  addr -= ok_idx;
+DisasmWindow.cpp:	  /* unreadable address - could be I/O, not implemented, etc. */
+DisasmWindow.cpp:	  --addr;
+DisasmWindow.cpp:      addrvec[--addridx] = addr;
+DisasmWindow.cpp:    lastaddr = addrvec[addridx - 1];
+DisasmWindow.cpp:	  for (int idx = vy; (idx < (vy+ch)) && (idx < (addridx-1)); ++idx)
+DisasmWindow.cpp:	  if ((vh - spos) < ch)
+DisasmWindow.cpp:	    spos = vh - ch;
+DisasmWindow.cpp:	    spos -= (ch / 2);
+DisasmWindow.cpp:	  if (mem->IsReadable(addr))
+DisasmWindow.cpp:		len = addrvec[next] - addrvec[idx];
+DisasmWindow.cpp:		len = 0x10000 - addr;
+DisasmWindow.cpp:	      Breakpoint * bpp = bpm->GetBreakpoint(addr);
+DisasmWindow.cpp:		  if (bpp->IsEnabled())
+DisasmWindow.cpp:	  Breakpoint * bpp = bpm->GetBreakpoint(addr);
+DisasmWindow.cpp:	    bpm->DeleteBreakpoint(bpp);
+DisasmWindow.cpp:	    bpm->AddBreakpoint(Breakpoint(addr));
+Label.cpp:  : wxWindow(parent, -1)
+Label.cpp:    SetFont(wxFont(prefs->LabelFontSize(), wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL));
+Memory.cpp:	    listeners[idx]->TellNewValue(addr, byte);
+MemWindow.cpp:  : wxScrolledWindow(parent, -1, wxDefaultPosition, wxDefaultSize, wxVSCROLL | wxSUNKEN_BORDER)
+MemWindow.cpp:  SetFont(wxFont(prefs->WindowFontSize(), wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL));
+MemWindow.cpp:  caddr = -1;
+MemWindow.cpp:  cx = cy = -1;
+MemWindow.cpp:      // printf("diff = %d\n", ch - client_height);
+MemWindow.cpp:  sprintf(foo, "%2.2x", memory->Read(addr));
+MemWindow.cpp:    cx -= (cx % 3);
+MemWindow.cpp:    cx = (cx+2) - ((cx+2)%3) - 2;
+MemWindow.cpp:	  if ((vh - spos) < ch)
+MemWindow.cpp:	    spos = vh - ch;
+MemWindow.cpp:	    spos -= (ch / 2);
+MemWindow.cpp:	      if (memory->IsReadable(jdx))
+MemWindow.cpp:		  unsigned char membyte = memory->Read(jdx);
+MemWindow.cpp:		  foonum += sprintf(foo + foonum, "-- ");
+MemWindow.cpp:  if ((caddr >= 0) && (caddr < 65536) && memory->IsReadable(caddr))
+MemWindow.cpp:    kcode -= '0';
+MemWindow.cpp:    kcode = toupper(kcode) - 'A' + 10;
+MemWindow.cpp:      memory->Write(caddr, kcode);
+MemWindow.cpp:      kcode = 16 * memory->Read(caddr) + kcode;
+MemWindow.cpp:      memory->Write(caddr, kcode);
+MemWindow.cpp:  else if ((totallines - addrline) < halflines)
+MemWindow.cpp:      memaddr = 16 * (totallines - halflines);
+MemWindow.cpp:      Scroll(vx, totallines - halflines);
+MemWindow.cpp:      memaddr = 16 * (addrline - halflines);
+MemWindow.cpp:      Scroll(vx, addrline - halflines);
+MemWindow.cpp:  int w = abs(cx - nx) + 2;
+MemWindow.cpp:  int h = abs(cy - ny) + 1;
+MemWindow.cpp:  int lines = (memaddr / 16) - (naddr / 16);
+MemWindow.cpp:  memaddr -= (16*lines);
+MemWindow.cpp:  Scroll(vx, vy - lines);
+MemWindow.cpp:  int lines = 1 + (naddr / 16) - (lastaddr / 16);
+MemWindow.cpp:  RefreshRect(wxRect(0, ch - (lines * cheight + 1), cw, lines * cheight + 1));
+MemWindow.cpp:  // find up-one-or-more-lines address, skipping all addresses that don't map to RAM or ROM
+MemWindow.cpp:  for (naddr = caddr - 16; !memory->IsReadable(naddr); naddr -= 16)
+MemWindow.cpp:  // find down-one-or-more-lines address, skipping all addresses that don't map to RAM or ROM
+MemWindow.cpp:  for (naddr = caddr + 16; !memory->IsReadable(naddr); naddr += 16)
+MemWindow.cpp:  for (naddr = caddr - 1; !memory->IsReadable(naddr); --naddr)
+MemWindow.cpp:  for (naddr = caddr + 1; !memory->IsReadable(naddr); ++naddr)
+MemWindow.cpp:  if (cx < 9 || cx > 58) return -1;
+MemWindow.cpp:  if (cx == 33) return -1;
+MemWindow.cpp:    return memaddr + (16 * cy) + ((cx - 9) / 3);
+MemWindow.cpp:  return memaddr + (16 * cy) + ((cx - 34) / 3) + 8;
+MemWindow.cpp:  int x = 3 * ((addr - memaddr) % 16);
+MemWindow.cpp:  *cy = (addr - memaddr) / 16;
+MemWindow.cpp:  if (memory->IsReadable(addr))
+MemWindow.cpp:      if ((caddr >= 0) && (caddr < 0x10000) && memory->IsReadable(caddr))
+MemWindow.cpp:  this->SetFocus();
+MemWindow.cpp:  cx = cy = -1;
+MemWindow.cpp:  if ((caddr >= 0) && (caddr < 0x10000) && memory->IsReadable(caddr))
+RegisterWindow.cpp:  : wxWindow(parent, -1, wxDefaultPosition, wxDefaultSize, wxSUNKEN_BORDER)
+RegisterWindow.cpp:  SetFont(wxFont(prefs->WindowFontSize(), wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL));
+RegisterWindow.cpp:  this->SetFocus();
+RegisterWindow.cpp:    kcode -= '0';
+RegisterWindow.cpp:    kcode = toupper(kcode) - 'A' + 10;
+RegisterWindow.cpp:      reg->Write((kcode | setbits) & (~clearbits));
+RegisterWindow.cpp:      kcode = 16 * reg->Read() + kcode;
+RegisterWindow.cpp:      reg->Write((kcode | setbits) & (~clearbits));
+RegisterWindow.cpp:  sprintf(foo, "%2.2x", reg->Read());
+RegisterWindow.cpp:  reg->Write(b);
+RegisterWindow.cpp:  : wxWindow(parent, -1, wxDefaultPosition, wxDefaultSize, wxSUNKEN_BORDER)
+RegisterWindow.cpp:  SetFont(wxFont(prefs->WindowFontSize(), wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL));
+RegisterWindow.cpp:  this->SetFocus();
+RegisterWindow.cpp:    kcode -= '0';
+RegisterWindow.cpp:    kcode = toupper(kcode) - 'A' + 10;
+RegisterWindow.cpp:      reg->Write((kcode | setbits) & (~clearbits));
+RegisterWindow.cpp:      kcode = 16 * reg->Read() + kcode;
+RegisterWindow.cpp:      reg->Write((kcode | setbits) & (~clearbits));
+RegisterWindow.cpp:      kcode = 16 * reg->Read() + kcode;
+RegisterWindow.cpp:      reg->Write((kcode | setbits) & (~clearbits));
+RegisterWindow.cpp:      kcode = 16 * reg->Read() + kcode;
+RegisterWindow.cpp:      reg->Write((kcode | setbits) & (~clearbits));
+RegisterWindow.cpp:  sprintf(foo, "%4.4x", reg->Read());
+RegisterWindow.cpp:  reg->Write(w);
+RegisterWindow.cpp:  Add(new Label(parent, label, 0), 0, wxCENTRE, prefs->BorderWidth());
+RegisterWindow.cpp:  Add(bwin, 0, wxLEFT, prefs->BorderWidth());
+RegisterWindow.cpp:  bwin->Constrain(sbits, cbits);
+RegisterWindow.cpp:  bwin->Refresh();
+RegisterWindow.cpp:  bwin->NewValue(b);
+RegisterWindow.cpp:  Add(new Label(parent, label, 0), 0, wxCENTRE, prefs->BorderWidth());
+RegisterWindow.cpp:  Add(wwin, 0, wxLEFT, prefs->BorderWidth());
+RegisterWindow.cpp:  wwin->Constrain(sbits, cbits);
+RegisterWindow.cpp:  wwin->Refresh();
+RegisterWindow.cpp:  wwin->NewValue(w);
+SimApp.cpp:  // sim_frame = new SimFrame(t, wxPoint(-1,-1), wxSize(16,16));
+SimApp.cpp:  sim_frame = new SimFrame(t, wxPoint(-1,-1), wxDefaultSize);
+SimApp.cpp:  sim_frame->Show(TRUE);
+SimFrame.cpp:  : wxFrame((wxFrame *)NULL, -1, title, pos, size, NORESIZE_FRAME)
+SimFrame.cpp:  // menuFile->Append(File_New, wxString::FromAscii("&New Project..."));
+SimFrame.cpp:  // menuFile->Append(File_Open, wxString::FromAscii("&Open Project..."));
+SimFrame.cpp:  // menuFile->AppendSeparator();
+SimFrame.cpp:  menuFile->Append(File_LoadBinary, wxString::FromAscii("&Load Binary Image..."));
+SimFrame.cpp:  menuFile->Append(File_LoadSRecords, wxString::FromAscii("&Load S-Record File..."));
+SimFrame.cpp:  menuFile->AppendSeparator();
+SimFrame.cpp:  menuFile->Append(File_Exit, wxString::FromAscii("E&xit"));
+SimFrame.cpp:  menuRun->Append(Run_Run, wxString::FromAscii("Run"));
+SimFrame.cpp:  menuRun->Append(Run_Stop, wxString::FromAscii("Stop"));
+SimFrame.cpp:  menuRun->Append(Run_Step, wxString::FromAscii("Step"));
+SimFrame.cpp:  menuRun->Append(Run_StepOver, wxString::FromAscii("Step Over"));
+SimFrame.cpp:  menuRun->Append(Run_MStep, wxString::FromAscii("Multistep"));
+SimFrame.cpp:  // menuRun->Append(Run_Trace, wxString::FromAscii("Trace"));
+SimFrame.cpp:  menuRun->AppendSeparator();
+SimFrame.cpp:  menuRun->Append(Run_Reset, wxString::FromAscii("Reset"));
+SimFrame.cpp:  menuBP->Append(BP_EnableAll, wxString::FromAscii("Enable All"));
+SimFrame.cpp:  menuBP->Append(BP_DisableAll, wxString::FromAscii("Disable All"));
+SimFrame.cpp:  menuBP->AppendSeparator();
+SimFrame.cpp:  menuBP->Append(BP_DeleteAll, wxString::FromAscii("Delete All"));
+SimFrame.cpp:  menuHelp->Append(Help_Help, wxString::FromAscii("&Help"));
+SimFrame.cpp:  menuHelp->Append(Help_About, wxString::FromAscii("&About..."));
+SimFrame.cpp:  menuBar->Append(menuFile, wxString::FromAscii("&File"));
+SimFrame.cpp:  menuBar->Append(menuRun, wxString::FromAscii("&Run"));
+SimFrame.cpp:  menuBar->Append(menuBP, wxString::FromAscii("Breakpoints"));
+SimFrame.cpp:  menuBar->Append(winmenu, wxString::FromAscii("&Windows"));
+SimFrame.cpp:  menuBar->Append(menuHelp, wxString::FromAscii("&Help"));
+SimFrame.cpp:  pwin->Constrain(0x20, 0x00);
+SimFrame.cpp:  mem->AddListener(diswin);
+SimFrame.cpp:  mem->AddListener(stkwin);
+SimFrame.cpp:  preg->AddListener(stwin);
+SimFrame.cpp:  sreg->AddListener(stkwin);
+SimFrame.cpp:  pcreg->AddListener(diswin);
+SimFrame.cpp:  stwin->AddListener(pwin);
+SimFrame.cpp:  bpm->AddBreakpointListener(bpwin);
+SimFrame.cpp:  bpm->AddBreakpointListener(diswin);
+SimFrame.cpp:  wxStaticBox * reg_box = new wxStaticBox(panel, -1, wxString::FromAscii("Registers"));
+SimFrame.cpp:  reg_sizer->Add(awin, 1, wxALL | wxALIGN_RIGHT, prefs->BorderWidth());
+SimFrame.cpp:  reg_sizer->Add(xwin, 0, wxLEFT | wxRIGHT | wxBOTTOM | wxALIGN_RIGHT, prefs->BorderWidth());
+SimFrame.cpp:  reg_sizer->Add(ywin, 0, wxLEFT | wxRIGHT | wxBOTTOM | wxALIGN_RIGHT, prefs->BorderWidth());
+SimFrame.cpp:  reg_sizer->Add(swin, 0, wxLEFT | wxRIGHT | wxBOTTOM | wxALIGN_RIGHT, prefs->BorderWidth());
+SimFrame.cpp:  reg_sizer->Add(pwin, 0, wxLEFT | wxRIGHT | wxBOTTOM | wxALIGN_RIGHT, prefs->BorderWidth());
+SimFrame.cpp:  reg_sizer->Add(pcwin, 0, wxLEFT | wxRIGHT | wxBOTTOM | wxALIGN_RIGHT, prefs->BorderWidth());
+SimFrame.cpp:  reg_sizer->Add(stwin, 0, wxLEFT | wxRIGHT | wxBOTTOM | wxALIGN_RIGHT, prefs->BorderWidth());
+SimFrame.cpp:  wxStaticBox * stk_box = new wxStaticBox(panel, -1, wxString::FromAscii("Stack"));
+SimFrame.cpp:  stk_sizer->Add(stkwin, 1, wxALL, prefs->BorderWidth());
+SimFrame.cpp:  wxStaticBox * bp_box = new wxStaticBox(panel, -1, wxString::FromAscii("Breakpoints"));
+SimFrame.cpp:  bp_sizer->Add(bpwin, 1, wxALL, prefs->BorderWidth());
+SimFrame.cpp:  wxStaticBox * dis_box = new wxStaticBox(panel, -1, wxString::FromAscii("Disassembly"));
+SimFrame.cpp:  dis_sizer->Add(diswin, 1, wxALL, prefs->BorderWidth());
+SimFrame.cpp:  top_sizer->Add(2*prefs->BorderWidth(), 0, 0, 0); // spacer
+SimFrame.cpp:  top_sizer->Add(reg_sizer, 0, 0, prefs->BorderWidth());
+SimFrame.cpp:  top_sizer->Add(2*prefs->BorderWidth(), 0, 0, 0); // spacer
+SimFrame.cpp:  top_sizer->Add(stk_sizer, 0, wxEXPAND, prefs->BorderWidth());
+SimFrame.cpp:  top_sizer->Add(2*prefs->BorderWidth(), 0, 0, 0); // spacer
+SimFrame.cpp:  top_sizer->Add(bp_sizer, 0, wxEXPAND, prefs->BorderWidth());
+SimFrame.cpp:  top_sizer->Add(2*prefs->BorderWidth(), 0, 0, 0); // spacer
+SimFrame.cpp:  top_sizer->Add(dis_sizer, 0, wxEXPAND, prefs->BorderWidth());
+SimFrame.cpp:  top_sizer->Add(2*prefs->BorderWidth(), 0, 0, 0); // spacer
+SimFrame.cpp:  //wxStaticBox * mem_box = new wxStaticBox(panel, -1, wxString::FromAscii("Memory"));
+SimFrame.cpp:  //mem_sizer->Add(memwin, 0, wxALL, prefs->BorderWidth());
+SimFrame.cpp:  memwin = new MemWindow(mem_sizer->GetStaticBox(), mem);
+SimFrame.cpp:  mem_sizer->Add(memwin, 0, wxALL, prefs->BorderWidth());
+SimFrame.cpp:  butt_sizer->Add(btrun, 0, wxALL, prefs->BorderWidth());
+SimFrame.cpp:  butt_sizer->Add(btstep, 0, wxLEFT | wxRIGHT | wxBOTTOM, prefs->BorderWidth());
+SimFrame.cpp:  butt_sizer->Add(btstepover, 0, wxLEFT | wxRIGHT | wxBOTTOM, prefs->BorderWidth());
+SimFrame.cpp:  butt_sizer->Add(btmstep, 0, wxLEFT | wxRIGHT | wxBOTTOM, prefs->BorderWidth());
+SimFrame.cpp:  butt_sizer->Add(bttrace, 0, wxLEFT | wxRIGHT | wxBOTTOM, prefs->BorderWidth());
+SimFrame.cpp:  butt_sizer->Add(btstop, 0, wxLEFT | wxRIGHT | wxBOTTOM, prefs->BorderWidth());
+SimFrame.cpp:  bot_sizer->Add(2*prefs->BorderWidth(), 0, 0, 0); // spacer
+SimFrame.cpp:  bot_sizer->Add(mem_sizer, 0, 0, 0);
+SimFrame.cpp:  bot_sizer->Add(2*prefs->BorderWidth(), 0, 0, 0); // spacer
+SimFrame.cpp:  bot_sizer->Add(butt_sizer, 0, wxALIGN_CENTRE, 0);
+SimFrame.cpp:  bot_sizer->Add(2*prefs->BorderWidth(), 0, 0, 0); // spacer
+SimFrame.cpp:  vsizer->Add(0, prefs->BorderWidth(), 0, 0); // spacer
+SimFrame.cpp:  vsizer->Add(top_sizer, 0, 0, 0);
+SimFrame.cpp:  vsizer->Add(0, prefs->BorderWidth(), 0, 0); // spacer
+SimFrame.cpp:  vsizer->Add(bot_sizer, 0, 0, 0);
+SimFrame.cpp:  vsizer->Add(0, prefs->BorderWidth(), 0, 0); // spacer
+SimFrame.cpp:  vsizer->Add(0, wxSystemSettings::GetMetric(wxSYS_CAPTION_Y), 0, 0); // spacer
+SimFrame.cpp:  panel->SetSizer(vsizer);
+SimFrame.cpp:  vsizer->SetSizeHints(panel);
+SimFrame.cpp:  panel_sizer->Add(panel, 0, 0, 0);
+SimFrame.cpp:  this->SetSizer(panel_sizer);
+SimFrame.cpp:  panel_sizer->SetSizeHints(this);
+SimFrame.cpp:  mem->init_ram_memory_read(0, 0xFFFF, 0);
+SimFrame.cpp:  mem->init_ram_memory_write(0, 0xFFFF, 0);
+SimFrame.cpp:  ap_reader_t mem_reader = mem->GetReader(0);
+SimFrame.cpp:  ap_writer_t mem_writer = mem->GetWriter(0);
+SimFrame.cpp:  winmenu->AppendCheckItem(Win_First + numwmitems, "Acia 6551");
+SimFrame.cpp:  ap_reader[0xC080] = ser->GetReader(0);
+SimFrame.cpp:  ap_writer[0xC080] = ser->GetWriter(0);
+SimFrame.cpp:  ap_reader[0xC081] = ser->GetReader(1);
+SimFrame.cpp:  ap_writer[0xC081] = ser->GetWriter(1);
+SimFrame.cpp:  ap_reader[0xC082] = ser->GetReader(2);
+SimFrame.cpp:  ap_writer[0xC082] = ser->GetWriter(2);
+SimFrame.cpp:  ap_reader[0xC083] = ser->GetReader(3);
+SimFrame.cpp:  ap_writer[0xC083] = ser->GetWriter(3);
+SimFrame.cpp:  AppleTextFrame * textFrame = new AppleTextFrame("40-Col Text Display");
+SimFrame.cpp:  winmenu->AppendCheckItem(Win_First + numwmitems, "40-Col Display");
+SimFrame.cpp:  ap_reader[0xC000] = textFrame->GetReader(0);
+SimFrame.cpp:  ap_writer[0xC000] = textFrame->GetWriter(0);
+SimFrame.cpp:  ap_reader[0xC010] = textFrame->GetReader(1);
+SimFrame.cpp:  ap_writer[0xC010] = textFrame->GetWriter(1);
+SimFrame.cpp:      ap_reader[ad] = textFrame->GetReader(2);
+SimFrame.cpp:      ap_writer[ad] = textFrame->GetWriter(2);
+SimFrame.cpp:      frame[idx]->Destroy();
+SimFrame.cpp:  bool checked = wmchecked[which - Win_First] ? false : true;
+SimFrame.cpp:  wmchecked[which - Win_First] = checked;
+SimFrame.cpp:  winmenu->Check(which, checked);
+SimFrame.cpp:  frame[which - Win_First]->Show(checked);
+SimFrame.cpp:  for (i = 0; i < numwmitems; i++) frame[i]->Destroy();
+SimFrame.cpp:  int result = fd->ShowModal();
+SimFrame.cpp:      wxString pstr = fd->GetPath();
+SimFrame.cpp:		      if (mem->IsReadable(addr))
+SimFrame.cpp:			  if (mem->IsRom(addr))
+SimFrame.cpp:			    mem->LoadToRom(addr, buf[idx]);
+SimFrame.cpp:	      memwin->ForceRefresh();
+SimFrame.cpp:	      stkwin->ForceRefresh();
+SimFrame.cpp:	      diswin->ForceRefresh();
+SimFrame.cpp:  fd->Destroy();
+SimFrame.cpp:  int addr = srec->address;
+SimFrame.cpp:  int count = srec->length;
+SimFrame.cpp:      wxLogError("S%d record specifies an out-of-range address of 0x%8.8lx\n",
+SimFrame.cpp:		 srec->type, srec->address);
+SimFrame.cpp:      if (mem->IsReadable(addr))
+SimFrame.cpp:	  if (mem->IsRom(addr))
+SimFrame.cpp:	    mem->LoadToRom(addr, srec->data[idx]);
+SimFrame.cpp:	    WRITE(addr, srec->data[idx]);
+SimFrame.cpp:					wxString::FromAscii("Choose an S-Record file"),
+SimFrame.cpp:  int result = fd->ShowModal();
+SimFrame.cpp:      wxString pstr = fd->GetPath();
+SimFrame.cpp:				  wxString::FromAscii("Load S-Records"));
+SimFrame.cpp:		    wxLogWarning("Unknown type of S-Record encountered at line %d\n", line);
+SimFrame.cpp:		    wxLogWarning("Spurious characters encountered in S-Record at line %d\n", line);
+SimFrame.cpp:		      wxLogWarning("Malformed S-Record encountered at line %d (more data than length)\n", line);
+SimFrame.cpp:		      wxLogWarning("Malformed S-Record encountered at line %d (bad checksum)\n", line);
+SimFrame.cpp:	      memwin->ForceRefresh();
+SimFrame.cpp:	      stkwin->ForceRefresh();
+SimFrame.cpp:	      diswin->ForceRefresh();
+SimFrame.cpp:  fd->Destroy();
+SimFrame.cpp:				   "Copyright 2000-2003 William Sheldon Simms III"),
+SimFrame.cpp:  bpm->EnableAll();
+SimFrame.cpp:  bpm->DisableAll();
+SimFrame.cpp:  bpm->DeleteAll();
+SimFrame.cpp:      mem->SetRunning(true);
+SimFrame.cpp:  mem->SetRunning(false);
+SimFrame.cpp:      awin->Refresh();
+SimFrame.cpp:      xwin->Refresh();
+SimFrame.cpp:      ywin->Refresh();
+SimFrame.cpp:      swin->Refresh();
+SimFrame.cpp:      pwin->Refresh();
+SimFrame.cpp:      pcwin->Refresh();
+SimFrame.cpp:      stwin->Refresh();
+SimFrame.cpp:      memwin->ForceRefresh();
+SimFrame.cpp:      stkwin->ForceRefresh();
+SimFrame.cpp:      diswin->ForceRefresh();
+SimFrame.cpp:	  mem->SetRunning(true);
+SimFrame.cpp:	  bpm->AddBreakpoint(Breakpoint(bp_S | bp_equal | bp_automatic, S));
+SimFrame.cpp:	      mem->SetRunning(false);
+SimFrame.cpp:	  awin->Refresh();
+SimFrame.cpp:	  xwin->Refresh();
+SimFrame.cpp:	  ywin->Refresh();
+SimFrame.cpp:	  swin->Refresh();
+SimFrame.cpp:	  pwin->Refresh();
+SimFrame.cpp:	  pcwin->Refresh();
+SimFrame.cpp:	  stwin->Refresh();
+SimFrame.cpp:	  memwin->ForceRefresh();
+SimFrame.cpp:	  stkwin->ForceRefresh();
+SimFrame.cpp:	  diswin->ForceRefresh();
+SimFrame.cpp:	  awin->Refresh();
+SimFrame.cpp:	  xwin->Refresh();
+SimFrame.cpp:	  ywin->Refresh();
+SimFrame.cpp:	  swin->Refresh();
+SimFrame.cpp:	  pwin->Refresh();
+SimFrame.cpp:	  pcwin->Refresh();
+SimFrame.cpp:	  stwin->Refresh();
+SimFrame.cpp:	  memwin->ForceRefresh();
+SimFrame.cpp:	  stkwin->ForceRefresh();
+SimFrame.cpp:	  diswin->ForceRefresh();
+SimFrame.cpp:  awin->Refresh();
+SimFrame.cpp:  xwin->Refresh();
+SimFrame.cpp:  ywin->Refresh();
+SimFrame.cpp:  swin->Refresh();
+SimFrame.cpp:  pwin->Refresh();
+SimFrame.cpp:  pcwin->Refresh();
+SimFrame.cpp:  stwin->Refresh();
+SimFrame.cpp:  memwin->ForceRefresh();
+SimFrame.cpp:  stkwin->ForceRefresh();
+SimFrame.cpp:  diswin->ForceRefresh();
+StackWindow.cpp:  : wxScrolledWindow(parent, -1, wxDefaultPosition, wxDefaultSize, wxVSCROLL | wxSUNKEN_BORDER)
+StackWindow.cpp:  SetFont(wxFont(prefs->WindowFontSize(), wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL));
+StackWindow.cpp:      // position (line number) of top-of-stack in virtual window
+StackWindow.cpp:      int spos = 0xFF - S;
+StackWindow.cpp:      // if top-of-stack is not (completely) in the visible window
+StackWindow.cpp:	  // if, when scrolled all the way down, top-of-stack is in window
+StackWindow.cpp:	  // else if it is possible to scroll such that t-o-s is centered
+StackWindow.cpp:	  //    then scroll such that t-o-s is centered.
+StackWindow.cpp:	  if ((vh - spos) < ch)
+StackWindow.cpp:	    Scroll(0, vh - ch);
+StackWindow.cpp:	    Scroll(0, spos - (ch/2));
+StackWindow.cpp:      lastaddr = 0x1FF - vy;
+StackWindow.cpp:      firstaddr = 0x1FF - (vy + ch);
+StackWindow.cpp:      int addr = 0x1FF - idx;
+StackWindow.cpp:  int y = cheight * (lastaddr - addr);
+StatusWindow.cpp:  : wxWindow(parent, -1)
+StatusWindow.cpp:  offset = offs - ((h - ch) / 2);
+StatusWindow.cpp:  SetFont(wxFont(prefs->WindowFontSize(), wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL));
+StatusWindow.cpp:  dc.GetTextExtent(wxString::FromAscii("NV-BDIZC"), &w, &h);
+StatusWindow.cpp:  dc.DrawText(wxString::FromAscii("NV-BDIZC"), offset, 0);
+StatusWindow.cpp:  : wxWindow(parent, -1, wxDefaultPosition, wxDefaultSize, wxSUNKEN_BORDER)
+StatusWindow.cpp:  SetFont(wxFont(prefs->WindowFontSize(), wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL));
+StatusWindow.cpp:  dc.GetTextExtent(wxString::FromAscii("NV-BDIZC"), &w, &h);
+StatusWindow.cpp:  return (h - ch) / 2 + cwidth;
+StatusWindow.cpp:      *pN = 1 - *pN;
+StatusWindow.cpp:      *pV = 1 - *pV;
+StatusWindow.cpp:      *pB = 1 - *pB;
+StatusWindow.cpp:      *pI = 1 - *pI;
+StatusWindow.cpp:      *pZ = 1 - *pZ;
+StatusWindow.cpp:      *pC = 1 - *pC;
+StatusWindow.cpp:	listeners[idx]->TellNewValue(np);
+StatusWindow.cpp:  FlagsLabel * fl = new FlagsLabel(parent, fw->GetOffset());
+StatusWindow.cpp:  Add(fl, 0, wxEXPAND, prefs->BorderWidth());
+StatusWindow.cpp:  Add(fw, 0, wxTOP, prefs->BorderWidth());
+StatusWindow.cpp:  fw->Refresh();
+StatusWindow.cpp:  fw->NewFlags(b);
+StatusWindow.cpp:  return fw->AddListener(new_listener);
+TestApp.cpp:  : wxWindow(parent, -1)
+TestApp.cpp:  this->text = text;
+TestApp.cpp:  : wxWindow(parent, -1, wxDefaultPosition, wxDefaultSize, wxSUNKEN_BORDER)
+TestApp.cpp:  : wxFrame((wxFrame *)NULL, -1, "TestFrame", wxPoint(-1,-1), wxSize(-1,-1), NORESIZE_FRAME)
+TestApp.cpp:  menuFile->Append(File_Exit, "E&xit");
+TestApp.cpp:  menuBar->Append(menuFile, "&File");
+TestApp.cpp:  wxStaticBox * box = new wxStaticBox(panel, -1, "Info");
+TestApp.cpp:  info_sizer->Add(awin, 1, wxALL, 5);
+TestApp.cpp:  info_sizer->Add(bwin, 0, wxLEFT | wxRIGHT | wxBOTTOM, 5);
+TestApp.cpp:  panel->SetSizer(info_sizer);
+TestApp.cpp:  info_sizer->SetSizeHints(panel);
+TestApp.cpp:  panel_sizer->Add(panel, 0, wxEXPAND, 0);
+TestApp.cpp:  this->SetSizer(panel_sizer);
+TestApp.cpp:  panel_sizer->SetSizeHints(this);
+TestApp.cpp:  frame->Show(TRUE);
+Uart.cpp:      nlistener->TellBaud(tx.bits_per_ksec, rx.bits_per_ksec);
+Uart.cpp:      nlistener->TellParity(tx.parity, rx.parity);
+Uart.cpp:      nlistener->TellDataBits(tx.data_bits, rx.data_bits);
+Uart.cpp:      nlistener->TellStopBits(tx.twice_stop_bits, rx.twice_stop_bits);
+Uart.cpp:      nlistener->TellIrq(tx.irq_flag, rx.irq_flag);
+Uart.cpp:      nlistener->TellEnabled(tx.enable, rx.enable);
+Uart.cpp:      nlistener->TellIrqEnabled(irq_enable, tx.irq_enable, rx.irq_enable);
+Uart.cpp:      nlistener->TellTxShift(tx_shift);
+Uart.cpp:      nlistener->TellRxShift(0);
+Uart.cpp:      listener[idx]->TellBaud(tx.bits_per_ksec, rx.bits_per_ksec);
+Uart.cpp:      listener[idx]->TellParity(tx.parity, rx.parity);
+Uart.cpp:      listener[idx]->TellDataBits(tx.data_bits, rx.data_bits);
+Uart.cpp:      listener[idx]->TellStopBits(tx.twice_stop_bits, rx.twice_stop_bits);
+Uart.cpp:      listener[idx]->TellIrq(tx.irq_flag, rx.irq_flag);
+Uart.cpp:      listener[idx]->TellEnabled(tx.enable, rx.enable);
+Uart.cpp:      listener[idx]->TellIrqEnabled(irq_enable, tx.irq_enable, rx.irq_enable);
+Uart.cpp:      listener[idx]->TellTxShift(tx_shift);
+Uart.cpp:      listener[idx]->TellRxShift(0);
+Uart.cpp:  rx.bufidx = rx.bufidx - 1;
+Uart.cpp:	    listener[idx]->TellTxShift(tx_shift);
+Uart.cpp:	  if ((current_time - time_index) >= tx.bit_time)
+Uart.cpp:		  listener[idx]->TxBit(time_index,  tx_level);
+Uart.cpp:		  listener[idx]->TellTxShift(tx_shift);
+Uart.cpp:	  tx.bufidx = tx.bufidx - 1;
+Uart.cpp:	      listener[idx]->TxByte(tx.buf[tx.bufidx]);
+Uart.cpp:	      listener[idx]->TellTxShift(tx_shift);
+Uart.cpp:		listener[idx]->TellIrq(tx.irq_flag, rx.irq_flag);
+Uart.cpp:  unsigned long time_diff = current_time - last_time;
+Uart.cpp:  if (len < 0) return -1;
+Uart.cpp:  if (x.buf == NULL) return -2;
+Uart.cpp:    listener[idx]->TellIrq(tx.irq_flag, rx.irq_flag);
+Uart.cpp:    listener[idx]->TellIrqEnabled(irq_enable, tx.irq_enable, rx.irq_enable);
+Uart.cpp:    listener[idx]->TellDataBits(tx.data_bits, rx.data_bits);
+Uart.cpp:    listener[idx]->TellDataBits(tx.twice_stop_bits, rx.twice_stop_bits);
+Uart.cpp:    listener[idx]->TellEnabled(tx.enable, rx.enable);
+Uart.cpp:    listener[idx]->TellParity(tx.parity, rx.parity);
+Uart.cpp:    listener[idx]->TellBaud(tx.bits_per_ksec, rx.bits_per_ksec);
+Uart.cpp:    listener[idx]->TellIrqEnabled(irq_enable, tx.irq_enable, rx.irq_enable);
+Uart.cpp:   rate of 2*baud in order to handle 1.5 stop bits - i.e.
+Uart.cpp:  tx_shift |= double_bits(tx_data) & (0xFFFFul >> (16 - twice_data_bits));
+WordRegister.cpp:    listeners[idx]->TellNewValue(w);

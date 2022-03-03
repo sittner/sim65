@@ -1,0 +1,55 @@
+instructions.o: instructions.c instructions.h tables.h \
+  AddressPeripheral.h
+disasm.o: disasm.c instructions.h tables.h AddressPeripheral.h
+tables.o: tables.c instructions.h tables.h
+srecord.o: srecord.c srecord.h
+SimApp.o: SimApp.cpp SimApp.h SimFrame.h ByteRegister.h \
+  ByteRegisterListener.h WordRegister.h WordRegisterListener.h \
+  RegisterWindow.h StatusWindow.h Label.h StackWindow.h MemoryListener.h \
+  DisasmWindow.h Memory.h AddressPeripheral.h BreakpointManager.h \
+  Breakpoint.h BreakpointListener.h MemWindow.h Core65c02.h \
+  ClockCustomer.h BreakpointWindow.h srecord.h
+SimFrame.o: SimFrame.cpp SimFrame.h ByteRegister.h ByteRegisterListener.h \
+  WordRegister.h WordRegisterListener.h RegisterWindow.h StatusWindow.h \
+  Label.h StackWindow.h MemoryListener.h DisasmWindow.h Memory.h \
+  AddressPeripheral.h BreakpointManager.h Breakpoint.h \
+  BreakpointListener.h MemWindow.h Core65c02.h ClockCustomer.h \
+  BreakpointWindow.h srecord.h instructions.h AddressDialog.h Prefs.h \
+  Acia6551.h Uart.h UartListener.h UartTypes.h Acia6551Listener.h \
+  Acia6551Frame.h
+RegisterWindow.o: RegisterWindow.cpp RegisterWindow.h ByteRegister.h \
+  ByteRegisterListener.h WordRegister.h WordRegisterListener.h Label.h \
+  Prefs.h
+StatusWindow.o: StatusWindow.cpp instructions.h StatusWindow.h \
+  ByteRegisterListener.h Prefs.h
+Label.o: Label.cpp Label.h Prefs.h
+StackWindow.o: StackWindow.cpp StackWindow.h MemoryListener.h \
+  ByteRegisterListener.h instructions.h AddressPeripheral.h Prefs.h
+DisasmWindow.o: DisasmWindow.cpp DisasmWindow.h Memory.h \
+  AddressPeripheral.h MemoryListener.h WordRegisterListener.h \
+  BreakpointManager.h Breakpoint.h BreakpointListener.h instructions.h \
+  disasm.h tables.h Prefs.h bkpt_enabled.xpm bkpt_disabled.xpm
+MemWindow.o: MemWindow.cpp MemWindow.h Memory.h AddressPeripheral.h \
+  MemoryListener.h instructions.h Prefs.h
+ByteRegister.o: ByteRegister.cpp ByteRegister.h ByteRegisterListener.h
+WordRegister.o: WordRegister.cpp WordRegister.h WordRegisterListener.h
+Memory.o: Memory.cpp Memory.h AddressPeripheral.h MemoryListener.h
+AddressDialog.o: AddressDialog.cpp AddressDialog.h
+Core65c02.o: Core65c02.cpp Core65c02.h BreakpointManager.h Breakpoint.h \
+  BreakpointListener.h ClockCustomer.h disasm.h instructions.h tables.h \
+  AddressPeripheral.h
+BreakpointWindow.o: BreakpointWindow.cpp BreakpointWindow.h \
+  BreakpointManager.h Breakpoint.h BreakpointListener.h Prefs.h
+Breakpoint.o: Breakpoint.cpp Breakpoint.h
+BreakpointManager.o: BreakpointManager.cpp BreakpointManager.h \
+  Breakpoint.h BreakpointListener.h
+Prefs.o: Prefs.cpp Prefs.h
+AddressPeripheral.o: AddressPeripheral.cpp AddressPeripheral.h
+Uart.o: Uart.cpp Uart.h AddressPeripheral.h ClockCustomer.h \
+  UartListener.h UartTypes.h
+Acia6551.o: Acia6551.cpp Acia6551.h Uart.h AddressPeripheral.h \
+  ClockCustomer.h UartListener.h UartTypes.h Acia6551Listener.h
+Acia6551Frame.o: Acia6551Frame.cpp Acia6551Frame.h ByteRegister.h \
+  ByteRegisterListener.h RegisterWindow.h WordRegister.h \
+  WordRegisterListener.h Acia6551.h Uart.h AddressPeripheral.h \
+  ClockCustomer.h UartListener.h UartTypes.h Acia6551Listener.h Prefs.h
