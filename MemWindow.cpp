@@ -254,7 +254,8 @@ void MemWindow::OnChar (wxKeyEvent& event)
   int cw, ch;
   GetClientSize(&cw, &ch);
 
-  int cx, cy;
+  int cx = 0;
+  int cy = 0;
   bool caddr_visible = address_to_coord(caddr, &cx, &cy);
 
   if (caddr_visible == false)

@@ -547,29 +547,16 @@ void SimFrame::OnLoadSRecords (wxCommandEvent& WXUNUSED(event))
       else
 	{
 	  int line = 1;
-	  int type = 0;
 	  int result;
 	  int remarks;
 	  unsigned numrecords = 0;
 	  unsigned long total = 0;
-	  unsigned short entry;
 	  struct srecord srec;
 
 	  result = read_srecord(f, &srec, &remarks);
 
 	  while (result != srec_result_eof)
 	    {
-		/*
-	      if (remarks != 0)
-		{
-		  if (remarks & remark_unknown_srecord)
-		    wxLogWarning("Unknown type of S-Record encountered at line %d\n", line);
-
-		  if (remarks & remark_spurious_character)
-		    wxLogWarning("Spurious characters encountered in S-Record at line %d\n", line);
-		}
-		*/
-
 	      if (result == srec_result_ok)
 		{
 		  switch (srec.type)
@@ -581,64 +568,14 @@ void SimFrame::OnLoadSRecords (wxCommandEvent& WXUNUSED(event))
 		    case srec_type_s1:
 		    case srec_type_s2:
 		    case srec_type_s3:
-			/*
-		      if (type > 0 && type != srec.type)
-			{
-			  wxLogWarning("S%d record follows S%d record without "
-					"intervening termination record.\n",
-				       srec.type, type);
-			}
-			*/
-
 		      load_srecord(&srec, &total);
-		      type = srec.type;
 		      ++numrecords;
 		      break;
 
 		    case srec_type_s5:
-			/*
-		      if (numrecords != srec.address)
-			{
-			  wxLogWarning("S5 record specifies %lu preceding records, but there were actually %u records.\n",
-				       srec.address, numrecords);
-			}
-			*/
-		      break;
-
 		    case srec_type_s7:
-			/*
-		      if (type != srec_type_s3)
-			{
-			  wxLogWarning("S7 record encountered after S%d record(s)\n", type);
-			}
-			*/
-
-		      entry = srec.address;
-		      type = 0;
-		      break;
-		      
 		    case srec_type_s8:
-			/*
-		      if (type != srec_type_s2)
-			{
-			  wxLogWarning("S8 record encountered after S%d record(s)\n", type);
-			}
-			*/
-
-		      entry = srec.address;
-		      type = 0;
-		      break;
-		      
 		    case srec_type_s9:
-			/*
-		      if (type != srec_type_s1)
-			{
-			  wxLogWarning("S9 record encountered after S%d record(s)\n", type);
-			}
-			*/
-
-		      entry = srec.address;
-		      type = 0;
 		      break;
 		    }
 

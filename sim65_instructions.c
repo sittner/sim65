@@ -38,7 +38,7 @@ uint8_t  C = 0, Z = 0, I = 1, D = 0, B = 1, V = 0, N = 0;
 uint8_t  interrupt_flags = 0;
 uint16_t emPC;
 
-long long unsigned int cycle_clock = 0;
+unsigned long long cycle_clock = 0;
 
 /* Abbreviations */
 

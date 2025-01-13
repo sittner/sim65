@@ -6,3 +6,6 @@ this is a GIT mirror of [sim65](http://www.wsxyz.net/sim65/) (version from March
 
 I've added some fixes to get it working (see commits).
 
+Dependencies for Debian 12:
+apt install libwxgtk3.2-dev
+
